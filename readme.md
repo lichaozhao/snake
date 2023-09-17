@@ -1,4 +1,4 @@
-# A fun of Github Copilot Chat 
+# A fun demo of Github Copilot Chat 
 Using below prompts to write a snake game in JavaScript. 
 
 ## Prerequisites 
