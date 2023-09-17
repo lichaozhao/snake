@@ -1,16 +1,16 @@
 # A fun of Github Copilot Chat 
-using below prompts to write a snake game in JavaScript. 
+Using below prompts to write a snake game in JavaScript. 
 
 ## Prerequisites 
 
-1. install VS Code to you computer and install Github Copilot & Github Copilot Chat extension.
-2. get Github Copilot for business account. please ask your GH Copilot administrator to get it. 
-3. get basic knowledge of large language model.
+1. Install VS Code to you computer and install Github Copilot & Github Copilot Chat extension.
+2. Get Github Copilot for business account. please ask your GH Copilot administrator to get it. 
+3. Get basic knowledge of large language model.
 
 ## The marjor steps to write a snake game 
 
-1. create a folder of snake-game and open it in VS Code.
-2. commuicate with Github Copilot Chat to get the snake game done. you can tell Copilot Chat what you want to do and Copilot Chat will give you the code. 
+1. Create a folder of snake-game and open it in VS Code.
+2. Commuicate with Github Copilot Chat to get the snake game done. you can tell Copilot Chat what you want to do and Copilot Chat will give you the code. 
 
 ## The sample prompts to write a snake game. 
 
@@ -32,4 +32,12 @@ Using bellow prompts to add more features into your game. please adjust the prom
     how do i stop the page scrolling
     how to add obstacles in the game
     how to detect collision between snake and obstacles
+
+Due to Copilot Chat is based on LLM, so every single time generated code may be not exactly same even you are using the same prompts. Here are some other prompts that maybe helpful. 
+
+    i tested the code you give me, the food is not aligned with the snake exactlly.
+    i want to show the scrore part outside of the game, just at the buttom of the game
+    how to control the snake by swiping the screen
+    the score is not updated
+    how to restart the game using enter key as game is over
 
