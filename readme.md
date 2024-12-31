@@ -12,7 +12,7 @@ Using below prompts to write a snake game in JavaScript.
 1. Create a folder of snake-game and open it in VS Code.
 2. Commuicate with Github Copilot Chat to get the snake game done. you can tell Copilot Chat what you want to do and Copilot Chat will give you the code. 
 
-## The sample prompts to write a snake game. 
+## The sample prompts to write a snake game. please use it in Multiple Edits window, this feature is more powerful than you thought. 
 
 Open the folder of snake-game in VS Code and using below prompts to communicate with Copilot Chat. 
 
