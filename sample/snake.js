@@ -1,3 +1,54 @@
+// Internationalization system
+let currentLanguage = 'en';
+let translations = {};
+
+// Load language file
+async function loadLanguage(lang) {
+    try {
+        const response = await fetch(`languages/${lang}.json`);
+        const data = await response.json();
+        translations = data;
+        currentLanguage = lang;
+        updateUI();
+        // Save language preference
+        localStorage.setItem('snake-game-language', lang);
+    } catch (error) {
+        console.error('Failed to load language:', error);
+        // Fallback to English
+        if (lang !== 'en') {
+            loadLanguage('en');
+        }
+    }
+}
+
+// Get translated text
+function t(key) {
+    return translations[key] || key;
+}
+
+// Update UI with current language
+function updateUI() {
+    document.getElementById('page-title').textContent = t('title');
+    document.getElementById('language-label').textContent = t('language');
+    document.getElementById('score').textContent = `${t('score')}: ${score}`;
+}
+
+// Initialize language system
+async function initLanguage() {
+    // Load saved language preference or default to English
+    const savedLang = localStorage.getItem('snake-game-language') || 'en';
+    document.getElementById('language-select').value = savedLang;
+    await loadLanguage(savedLang);
+}
+
+// Language selector event handler
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('language-select').addEventListener('change', function(e) {
+        loadLanguage(e.target.value);
+    });
+    initLanguage();
+});
+
 // Set up the canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -58,7 +109,7 @@ function gameLoop() {
         if (head.x === snake[i].x && head.y === snake[i].y) {
             clearInterval(intervalId);
             document.removeEventListener("keydown", handleKeyDown);
-            alert("Game over! Press Enter to restart.");
+            alert(t('gameOver'));
             document.addEventListener("keydown", handleRestart);
         }
     }
@@ -66,7 +117,7 @@ function gameLoop() {
         if (head.x === obstacles[i].x && head.y === obstacles[i].y) {
             clearInterval(intervalId);
             document.removeEventListener("keydown", handleKeyDown);
-            alert("Game over! Press Enter to restart.");
+            alert(t('gameOver'));
             document.addEventListener("keydown", handleRestart);
         }
     }
@@ -83,7 +134,7 @@ function gameLoop() {
     for (let i = 0; i < obstacles.length; i++) {
         ctx.fillRect(obstacles[i].x, obstacles[i].y, 10, 10);
     }
-    document.getElementById("score").innerHTML = `Score: ${score}`;
+    document.getElementById("score").innerHTML = `${t('score')}: ${score}`;
 }
 
 let intervalId = setInterval(gameLoop, 100);

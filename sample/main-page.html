@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Snake Game</title>
+        <title id="page-title">Snake Game</title>
         <style>
             body {
                 margin: 0;
@@ -19,9 +19,24 @@
                 font-size: 24px;
                 margin-top: 10px;
             }
+            #language-selector {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            #language-selector select {
+                font-size: 16px;
+                padding: 5px;
+            }
         </style>
     </head>
     <body>
+        <div id="language-selector">
+            <label for="language-select" id="language-label">Language</label>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
         <canvas id="canvas" width="400" height="400"></canvas>
         <div id="score">Score: 0</div>
         <script src="snake.js"></script>
